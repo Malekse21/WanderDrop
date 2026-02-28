@@ -1,7 +1,9 @@
 # WanderDrop 🧭
 
 WanderDrop is a collaborative urban exploration platform that encourages spontaneous discovery and gamified travel. It combines AI-driven recommendations with real-world challenges to turn city wandering into a premium, shared adventure.
-
+DEMO VIDEO:
+https://youtu.be/xWddOa-EDAU
+APP LINK:
 wander-drop.vercel.app
 ## 🌟 Core Features
 
