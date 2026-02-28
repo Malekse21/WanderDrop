@@ -1,0 +1,128 @@
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,900&family=Instrument+Sans:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+/* ── Tailwind Theme ── */
+@theme {
+  --color-ink: #1C1612;
+  --color-clay: #C4603A;
+  --color-terracotta: #D97B52;
+  --color-sand: #E8C9A0;
+  --color-parchment: #F4EAD5;
+  --color-cream: #FAF5EC;
+  --color-moss: #5C7A4E;
+  --color-dusk: #8B7355;
+
+  --font-family-fraunces: 'Fraunces', serif;
+  --font-family-instrument: 'Instrument Sans', sans-serif;
+
+  --shadow-warm-sm: 0 1px 3px rgba(139, 115, 85, 0.12), 0 1px 2px rgba(139, 115, 85, 0.08);
+  --shadow-warm: 0 4px 12px rgba(139, 115, 85, 0.15), 0 2px 4px rgba(139, 115, 85, 0.1);
+  --shadow-warm-lg: 0 10px 30px rgba(139, 115, 85, 0.2), 0 4px 8px rgba(139, 115, 85, 0.1);
+
+  --animate-shimmer: shimmer 1.5s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-fade-cycle: fade-cycle 3s ease-in-out infinite;
+  --animate-blob-pulse: blob-pulse 4s ease-in-out infinite;
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(196, 96, 58, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(196, 96, 58, 0.6), 0 0 60px rgba(196, 96, 58, 0.3); }
+  }
+
+  @keyframes fade-cycle {
+    0%, 100% { opacity: 0; transform: translateY(8px); }
+    20%, 80% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes blob-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.3); opacity: 0.9; }
+  }
+}
+
+/* ── Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family-instrument);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  min-height: 100dvh;
+}
+
+/* ── Grain Texture Utility ── */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+  border-radius: inherit;
+}
+
+/* ── Fraunces Heading Utility ── */
+.heading {
+  font-family: var(--font-family-fraunces);
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* ── Shimmer Background ── */
+.shimmer-bg {
+  background: linear-gradient(
+    90deg,
+    var(--color-sand) 25%,
+    var(--color-parchment) 50%,
+    var(--color-sand) 75%
+  );
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dusk);
+  border-radius: 2px;
+}
+
+/* ── Hide number input spinners ── */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
