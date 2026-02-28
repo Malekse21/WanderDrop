@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { DailyChallenge } from '../types';
 import CompletionSheet from './CompletionSheet';
 import confetti from 'canvas-confetti';
@@ -61,7 +61,6 @@ function AnimatedCounter({ endValue }: { endValue: number }) {
 export default function ChallengeHeroCard({ challenge, loading, onComplete, onSkip }: Props) {
   const [sheetOpen, setSheetOpen] = useState(false);
   const [justCompleted, setJustCompleted] = useState(false);
-  const [milestone, setMilestone] = useState(false);
 
   const handleCompleteSubmit = async (note: string, rating: number) => {
     const res = await onComplete(note, rating);
@@ -69,7 +68,6 @@ export default function ChallengeHeroCard({ challenge, loading, onComplete, onSk
     if (res) {
       setJustCompleted(true);
       if (res.streak_milestone) {
-        setMilestone(true);
         confetti({
           particleCount: 100,
           spread: 70,

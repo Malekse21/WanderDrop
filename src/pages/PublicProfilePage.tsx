@@ -29,6 +29,7 @@ const PUBLIC_USER: Profile = {
   is_discoverable: true,
   match_notification: true,
   profile_tagline: "Wandering where the WiFi is weak.",
+  gem_access_tier: 1,
   created_at: new Date().toISOString(),
 };
 

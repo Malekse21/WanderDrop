@@ -18,6 +18,7 @@ const CURRENT_USER: Profile = {
   is_discoverable: true,
   match_notification: true,
   profile_tagline: null,
+  gem_access_tier: 1,
   created_at: new Date().toISOString(),
 };
 

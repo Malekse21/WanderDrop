@@ -9,7 +9,7 @@ export function useChallengeHistory() {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
-  const fetchHistory = useCallback((currentPage: number = 1, append: boolean = false) => {
+  const fetchHistory = useCallback((currentPage: number = 1) => {
     setLoading(true);
     let allLogs: DailyChallenge[] = [];
     try {
@@ -34,11 +34,11 @@ export function useChallengeHistory() {
   }, []);
 
   useEffect(() => {
-    fetchHistory(1, false);
+    fetchHistory(1);
     
     const listener = () => {
       setPage(1);
-      fetchHistory(1, false);
+      fetchHistory(1);
     };
 
     window.addEventListener('challenge-update', listener);
@@ -49,7 +49,7 @@ export function useChallengeHistory() {
     if (!hasMore || loading) return;
     const nextPage = page + 1;
     setPage(nextPage);
-    fetchHistory(nextPage, true);
+    fetchHistory(nextPage);
   };
 
   return { history, hasMore, loadMore, loading };
