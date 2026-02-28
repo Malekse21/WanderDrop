@@ -1,8 +1,0 @@
-﻿
-> wanderdrop@0.0.0 build
-> tsc -b && vite build
-
-src/hooks/useGems.ts(107,19): error TS6133: 'setHasMore' is declared but its value is never read.
-src/pages/GemsPage.tsx(2,18): error TS6133: 'AnimatePresence' is declared but its value is never read.
-src/pages/GemsPage.tsx(11,1): error TS6133: 'getGemTypeColor' is declared but its value is never read.
-src/pages/PostGemPage.tsx(1,20): error TS6133: 'useRef' is declared but its value is never read.

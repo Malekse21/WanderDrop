@@ -1,0 +1,26 @@
+remote: error: GH013: Repository rule violations found for refs/heads/dev.        
+remote: 
+remote: - GITHUB PUSH PROTECTION        
+remote:   ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö        
+remote:     Resolve the following violations before pushing again        
+remote: 
+remote:     - Push cannot contain secrets        
+remote: 
+remote:             
+remote:      (?) Learn how to resolve a blocked push        
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push        
+remote:             
+remote:             
+remote:       ÔÇöÔÇö Groq API Key ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö        
+remote:        locations:        
+remote:          - commit: 2242418ab8a91698996909a25c4ac6eed4c3628f        
+remote:            path: .env.example:3        
+remote:             
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.        
+remote:        https://github.com/Malekse21/WanderDrop/security/secret-scanning/unblock-secret/3AHW1zrHRs1jy035OUhuUugjdNK        
+remote:             
+remote: 
+remote: 
+To https://github.com/Malekse21/WanderDrop.git
+ ! [remote rejected] dev -> dev (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/Malekse21/WanderDrop.git'
