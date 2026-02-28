@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useTodaysChallenge } from '../hooks/useTodaysChallenge';
 import { useChallengeHistory } from '../hooks/useChallengeHistory';
 import StreakHeader from '../components/StreakHeader';

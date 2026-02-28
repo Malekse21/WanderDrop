@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# WanderDrop 🧭
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+WanderDrop is a collaborative urban exploration platform that encourages spontaneous discovery and gamified travel. It combines AI-driven recommendations with real-world challenges to turn city wandering into a premium, shared adventure.
 
-Currently, two official plugins are available:
+## 🌟 Core Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **The Drop**: Receive a curated, AI-generated travel package (destination, itinerary, and "welcome challenge") that remains a secret until you're ready to reveal it.
+- **Urban Gems**: Discover and share "Hidden Gems" — unique locations verified by the community. Gems have different access tiers based on your explorer status.
+- **Daily Challenges**: Complete location-based quests to earn XP, level up your profile, and maintain your streak.
+- **Wanderer Profile**: A dynamic identity system that calculates your "Explorer Archetype" (e.g., *The Hidden Gem Hunter*, *The Chaos Tourist*) based on your activity patterns.
+- **Companion Matching**: Find "Travel Twins" — other users with complementary exploration styles, matched via AI analysis of your trait maps.
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
+- **React 19** with **TypeScript**
+- **Vite** for fast builds and HMR
+- **Tailwind CSS 4** for premium, modern aesthetics
+- **Framer Motion** for smooth micro-animations and transitions
+- **Leaflet & React Leaflet** for interactive map experiences
+- **Canvas Confetti** for celebration moments
 
-## Expanding the ESLint configuration
+### Backend & Infrastructure
+- **Supabase**: Auth, PostgreSQL database, and Real-time updates.
+- **Supabase Edge Functions**: Deno-based serverless functions for AI logic and heavy compute.
+- **Groq AI**: Powering the "Explorer Archetype" analysis and companion matching blurb generation.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
+- Node.js (Latest LTS recommended)
+- A Supabase Project
+- A Groq API Key (for AI features)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Local Development
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Malekse21/WanderDrop.git
+   cd WanderDrop
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. **Configure Environment Variables**:
+   Create a `.env` file in the root directory and add your Supabase and Groq keys (use `.env.example` as a template):
+   ```env
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+## 📂 Project Structure
+
+- `src/components`: Reusable UI elements (cards, charts, headers, overlays).
+- `src/hooks`: Custom React hooks for data fetching, auth, and state management.
+- `src/pages`: Core application views (Discovery, Profile, Challenges, Gems).
+- `supabase/migrations`: SQL schema definitions and RLS policies.
+- `supabase/functions`: Edge functions for AI processing and core logic.
+
+## 📄 License
+
+This project is private and intended for personal use by the WanderDrop team.
